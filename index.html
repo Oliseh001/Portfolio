@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Portfolio</title>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500"
-			rel="stylesheet"
-		/>
-
-		<link rel="stylesheet" href="styles.css" />
-	</head>
-	<body>
-		<div  :style="[darkModeSet ? darkMode : '', base]"> <!-- to link the darkMode to darkModeSet -->
-			<header>
-				<div class="circle">
-					<img src="images/pfp.png" alt="Profile Picture">
-				</div>
-				<h1>{{ name }}'s Portfolio</h1>
-				<nav>
-					<ul>
-						<li v-for="link in links" :key="link.id">
-						  <a :href="link.url">{{ link.name }}</a>
-						</li>
-					  </ul>
-				</nav>
-			</header>
-			<main>
-				<div class="blog_wrapper">
-					<button @click="toggleMode">
-						{{ darkModeSet ? '&#9788;' : '&#9789;' }}
-					</button>
-					<!-- BLOG SECTION -->
-					<section id="blog">
-						<article v-for="content in contents"  :key="content.id">
-							<h3>{{content.title}}</h3>
-							<p v-html="content.body">							</p>
-							<p class="read_more">Read More</p>
-						</article>
-					</section>
-				</div>
-			</main>
-		</div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.30/vue.global.prod.js"></script>
-		<script src="script.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="circle">
+          <img src="images/pfp.png" alt="Profile Picture" />
+        </div>
+        <h1>{{ name }}'s Portfolio</h1>
+      </header>
+      <main>
+        <div class="blog_wrapper">
+          <button class="toggle-btn" @click="toggleMode">
+            {{ darkModeSet ? "Light Mode 🌞" : "Dark Mode 🌙" }}
+          </button>
+          <section id="blog" class="grid-container">
+            <article v-for="content in contents" :key="content.id" class="grid-item">
+              <h3>{{ content.title }}</h3>
+              <div v-html="content.body"></div>
+            </article>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <h3>Contact Me</h3>
+        <p>You can reach out to me via the following platforms:</p>
+        <div class="social-icons">
+          <button class="social-btn">
+            <a href="https://github.com/oliseh001" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </button>
+          <button class="social-btn">
+            <a href="https://linkedin.com" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </button>
+          <button class="social-btn">
+            <a href="https://x.com/olisehthepipe?s=21&t=qV6NohNUH5cvBCr-Gahsww" target="_blank">
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
+          </button>
+          <button class="social-btn">
+            <a href="mailto:onochieemeka2@gmail.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </button>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.30/vue.global.prod.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,67 +1,56 @@
 const contents = [
-    {
-        id: 1,
-        title: "About Me",
-        body: `I'm a dedicated web developer with a passion for crafting responsive, visually captivating web experiences. Known for being hard-working, innovative, and detail-oriented, I bring proficiency in HTML5, CSS3, JavaScript, Vue.js, and NestJS to every project. My focus is on delivering user-friendly designs that not only look great but also perform seamlessly across all browsers. I'm a dedicated web developer with a passion for crafting responsive, visually captivating web experiences. Known for being hard-working, innovative, and detail-oriented, I bring proficiency in HTML5, CSS3, JavaScript, Vue.js, and NestJS to every project. My focus is on delivering user-friendly designs that not only look great but also perform seamlessly across all browsers`
-    },
-    {
-        id: 2,
-        title: "Technical Skills",
-        body: `
-            <ul>
-              <li><strong>Semantic HTML</strong>,<br> <strong>CSS3</strong> / <strong>Tailwind CSS</strong>,<br> <strong>JavaScript</strong>, <strong>TypeScript</strong>,<br> <strong>Git</strong> (Version Control Management), <br><strong>GitHub</strong>, <br><strong>GitLab</strong>, <br><strong>Vue.js</strong> (Quasar Framework), <br><strong>NestJS</strong></li>
-            </ul>
-          `
-    },
-    {
-        id: 3,
-        title: "Projects",
-        body: `
-          <h4>1. Project One - Vue E-commerce Site</h4>
-          <p>This is a fully functional e-commerce website built with Vue.js & Quasar. It supports user authentication, cart management. <strong> <a href="https://e-commerce-gzu0.onrender.com/#/" target="_blank">View Project</a><strong></p>
-        `
-      },
-      {
-        id: 4,
-        title: "Contact Me",
-        body: `
-          <p>If you'd like to get in touch, feel free to reach out via any of the following platforms:</p>
-          <ul>
-            <li><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/oliseh001" target="_blank">GitHub</a></li>
-            <li><a href="mailto:Onochieemeka2@gmail.com">Email</a></li>
-            <li><a href="https://gitlab.com/oliseh001" target="_blank">GitLab</a></li>
-            <li><a href="https://wa.me/2349042407534?text=Hi%20Oliseh%20Got%20Your%20Number%20From%20Your%20Portfolio" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>         
-          </ul>
-        `
-      },
-
-
+  {
+    id: 1,
+    title: "About Me",
+    body: `I am a dedicated web developer who thrives on creating responsive and visually engaging web experiences. With a strong focus on being innovative, detail-oriented, and hard-working, I leverage my skills in HTML5, CSS3, JavaScript, Vue.js, and NestJS to build seamless, scalable applications. NestJS, with its powerful TypeScript support and modular architecture, allows me to develop robust backend solutions that integrate perfectly with front-end frameworks.`,
+  },
+  {
+    id: 2,
+    title: "Technical Skills",
+    body: `
+      <ul>
+        <li>Semantic HTML, CSS3 / Tailwind CSS, JavaScript, TypeScript</li>
+        <li>Git (Version Control), GitHub, GitLab</li>
+        <li>VueJs (Quasar Framework), NestJS</li>
+      </ul>
+    `,
+  },
+  {
+    id: 3,
+    title: "Projects",
+    body: `
+      <div>
+        <div class="project">
+          <h4>Vue E-commerce Site</h4>
+          <p>A functional e-commerce website built with VueJS & Quasar.</p>
+          <a href="https://e-commerce-gzu0.onrender.com/#/" target="_blank" class="project-btn">View Project</a>
+        </div>
+        <div class="project">
+          <h4>Random Bible Verse & Quote Generator</h4>
+          <p>A full-stack app for generating random verses and quotes, built with VueJS & NestJS.</p>
+          <a href="https://bible-verse-front-2.onrender.com" target="_blank" class="project-btn">View Project</a>
+        </div>
+        <div class="project">
+          <h4>Cart Management API</h4>
+          <p>A REST API for managing carts with JWT tokens, bcrypt, and NestJS.</p>
+          <a href="https://github.com/Oliseh001/ecomm-bkend" target="_blank" class="project-btn">View Project</a>
+        </div>
+      </div>`
+  },
 ];
-// ... rest of your code
+
 Vue.createApp({
-    data(){
-        return{
-            name: 'Olisemeka',
-            links: [
-                { id: 1, name: "Home", url: "/" },
-                { id: 2, name: "Portfolio", url: "/portfolio" },
-                { id: 3, name: "Contact Me", url: "/contact" },
-              ],
-        contents,
+  data() {
+    return {
+      name: "Olisemeka",
+      contents,
       darkModeSet: false,
-      darkMode: {
-        background: "#38383a",
-        color: "whitesmoke",
-      },
-      base: {
-        fontFamily: "monospace",
-      },
     };
   },
   methods: {
     toggleMode() {
       this.darkModeSet = !this.darkModeSet;
+      document.body.classList.toggle("dark", this.darkModeSet);
     },
   },
 }).mount("body");
