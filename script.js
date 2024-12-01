@@ -32,7 +32,7 @@ const contents = [
         </div>
         <div class="project">
           <h4>Cart Management API</h4>
-          <p>A A REST API for managing carts built with NestJS, featuring JWT authentication and route guards for user verification. The API also utilizes bcrypt for password hashing, ensuring secure user authentication and authorization before granting access to protected routes.</p>
+          <p>A REST API for managing carts built with NestJS, featuring JWT authentication and route guards for user verification. The API also utilizes bcrypt for password hashing, ensuring secure user authentication and authorization before granting access to protected routes.</p>
           <a href="https://github.com/Oliseh001/ecomm-bkend" target="_blank" class="project-btn">View Github Repo</a>
         </div>
       </div>`
